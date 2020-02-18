@@ -3,6 +3,12 @@ import React from 'react';
 class SetTimer extends React.Component {
   constructor() {
     super();
+
+    this.state = {
+      hours: 0,
+      minutes: 0,
+      seconds: 0
+    }
   }
 
   render() {
