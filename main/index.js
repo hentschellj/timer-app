@@ -14,12 +14,17 @@ class Timer extends React.Component {
         seconds: 0
       }
     }
+
+    this.startTimer = this.startTimer.bind(this)
+  }
+
+  startTimer() {
   }
 
   render() {
     return (
       <div className="container">
-        <SetTimer />
+        <SetTimer startTimer={this.startTimer} />
       </div>
     )
   }

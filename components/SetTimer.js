@@ -52,7 +52,9 @@ class SetTimer extends React.Component {
         </div>
 
         <div>
-          <button>Start Timer</button>
+          <button onClick={()=>{
+            this.props.startTimer(this.state.hours, this.state.minutes, this.state.seconds)
+          }}>Start Timer</button>
         </div>
       </div>
     )
