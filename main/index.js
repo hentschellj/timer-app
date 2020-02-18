@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SetTimer from '../components/SetTimer';
 
 class Timer extends React.Component {
   constructor() {
@@ -18,7 +19,7 @@ class Timer extends React.Component {
   render() {
     return (
       <div className="container">
-        Timer App
+        <SetTimer />
       </div>
     )
   }
