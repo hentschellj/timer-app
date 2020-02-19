@@ -55,7 +55,7 @@ class Timer extends React.Component {
       <div className="container">
         {
           (this.state.isRunning)?
-          <Countdown /> :
+          <Countdown timeRemaining={this.state.timeRemaining} /> :
           <SetTimer startTimer={this.startTimer} /> 
         }
       </div>
