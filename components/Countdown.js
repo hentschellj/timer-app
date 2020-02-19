@@ -11,17 +11,17 @@ class Countdown extends React.Component {
         <h2>Time Remaining</h2>
         <div className="digit">
           <label htmlFor="hours">Hours</label><br />
-          <input type="number" name="hours" readOnly />
+          <input type="number" name="hours" value={this.props.timeRemaining.hours} readOnly />
         </div>
 
         <div className="digit">
           <label htmlFor="minutes">Minutes</label><br />
-          <input type="number" name="minutes" readOnly />
+          <input type="number" name="minutes" value={this.props.timeRemaining.minutes} readOnly />
         </div>
 
         <div className="digit">
           <label htmlFor="seconds">Seconds</label><br />
-          <input type="number" name="seconds" readOnly />
+          <input type="number" name="seconds" value={this.props.timeRemaining.seconds} readOnly />
         </div>
 
         <button>Clear Timer</button>
