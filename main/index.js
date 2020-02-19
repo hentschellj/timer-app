@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import SetTimer from '../components/SetTimer';
 import Countdown from '../components/Countdown';
+import './index.css';
 
 class Timer extends React.Component {
   constructor() {
