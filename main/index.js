@@ -19,6 +19,12 @@ class Timer extends React.Component {
   }
 
   startTimer() {
+
+  }
+
+  convertToSeconds(time) {
+    const { hours, minutes, seconds } = time;
+    return hours * 60 * 60 + minutes * 60 + seconds;
   }
 
   render() {
