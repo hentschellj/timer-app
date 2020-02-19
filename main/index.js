@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SetTimer from '../components/SetTimer';
+import Countdown from '../components/Countdown';
 
 class Timer extends React.Component {
   constructor() {
@@ -18,8 +19,9 @@ class Timer extends React.Component {
     this.startTimer = this.startTimer.bind(this)
   }
 
-  startTimer() {
+  startTimer(hours, minutes, seconds) {
     this.setState({
+      isRunning: true,
       timeRemaining: {
         hours,
         minutes,
@@ -41,7 +43,11 @@ class Timer extends React.Component {
   render() {
     return (
       <div className="container">
-        <SetTimer startTimer={this.startTimer} />
+        {
+          (this.state.isRunning)?
+          <Countdown /> :
+          <SetTimer startTimer={this.startTimer} /> 
+        }
       </div>
     )
   }
