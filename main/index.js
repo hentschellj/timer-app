@@ -32,11 +32,16 @@ class Timer extends React.Component {
       let interval = setInterval(() => {
         totalTimeRemaining--
         if(totalTimeRemaining <= 0) {
-          this.setState({
-            isRunning: false
-          })
+          this.clearTimer(interval)
         }
       }, 1000)
+    })
+  }
+
+  clearTimer(interval) {
+    clearInterval(interval)
+    this.setState({
+      isRunning: false
     })
   }
 
