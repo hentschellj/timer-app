@@ -19,7 +19,18 @@ class Timer extends React.Component {
   }
 
   startTimer() {
-
+    this.setState({
+      timeRemaining: {
+        hours,
+        minutes,
+        seconds
+      }
+    }, () => {
+      let totalTimeRemaining = this.convertToSeconds(this.state.timeRemaining)
+      let interval = setInterval(() => {
+        totalTimeRemaining--
+      }, 1000)
+    })
   }
 
   convertToSeconds(time) {
