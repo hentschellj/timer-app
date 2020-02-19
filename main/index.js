@@ -3,6 +3,12 @@ import ReactDOM from 'react-dom';
 import SetTimer from '../components/SetTimer';
 import Countdown from '../components/Countdown';
 import './index.css';
+import beep from './beep.wav';
+
+function alert() {
+  let audio = new Audio(beep)
+  audio.play()
+}
 
 class Timer extends React.Component {
   constructor() {
@@ -35,6 +41,7 @@ class Timer extends React.Component {
         totalTimeRemaining--
         this.updateDisplay(totalTimeRemaining)
         if(totalTimeRemaining <= 0) {
+          alert()
           this.clearTimer(interval)
         }
       }, 1000)
