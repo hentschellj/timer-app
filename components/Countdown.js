@@ -24,7 +24,7 @@ class Countdown extends React.Component {
           <input type="number" name="seconds" value={this.props.timeRemaining.seconds} readOnly />
         </div>
 
-        <button>Clear Timer</button>
+        <button onClick={this.props.clearTimer}>Clear Timer</button>
       </div>
     )
   }

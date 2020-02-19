@@ -17,6 +17,7 @@ class Timer extends React.Component {
     }
 
     this.startTimer = this.startTimer.bind(this)
+    this.clearTimer = this.clearTimer.bind(this)
   }
 
   startTimer(hours, minutes, seconds) {
@@ -55,7 +56,7 @@ class Timer extends React.Component {
       <div className="container">
         {
           (this.state.isRunning)?
-          <Countdown timeRemaining={this.state.timeRemaining} /> :
+          <Countdown timeRemaining={this.state.timeRemaining} clearTimer={this.clearTimer} /> :
           <SetTimer startTimer={this.startTimer} /> 
         }
       </div>
