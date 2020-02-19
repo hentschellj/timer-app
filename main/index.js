@@ -32,10 +32,18 @@ class Timer extends React.Component {
       let totalTimeRemaining = this.convertToSeconds(this.state.timeRemaining)
       let interval = setInterval(() => {
         totalTimeRemaining--
+        this.updateDisplay(totalTimeRemaining)
         if(totalTimeRemaining <= 0) {
           this.clearTimer(interval)
         }
       }, 1000)
+    })
+  }
+
+  updateDisplay(seconds) {
+    const timeRemaining = this.convertToNormal(seconds)
+    this.setState({
+      timeRemaining
     })
   }
 
@@ -49,6 +57,14 @@ class Timer extends React.Component {
   convertToSeconds(time) {
     const { hours, minutes, seconds } = time;
     return hours * 60 * 60 + minutes * 60 + seconds;
+  }
+
+  convertToNormal(seconds) {
+    return {
+      hours: Math.floor(seconds / 3600),
+      minutes: Math.floor((seconds % 3600) / 60),
+      seconds: Math.floor((seconds % 3600) % 60)
+    }
   }
 
   render() {
